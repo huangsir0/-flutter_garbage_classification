@@ -1,3 +1,4 @@
+import 'package:flutter_garbage_classification/bean/data_menu.dart';
 import 'package:flutter_garbage_classification/bean/garbage_info.dart';
 import 'package:flutter_garbage_classification/bean/knowledge_tip.dart';
 import 'package:html/parser.dart';
@@ -53,6 +54,25 @@ class Api {
       var response = await net.localGet(fileName);
 
       data = KnowledgeTip.fromJson(response);
+
+
+    }catch(e){
+
+      print(e);
+    }
+
+    return data;
+  }
+
+
+  Future<DataMenu> fetchDataMenu(String fileName) async{
+
+    DataMenu data;
+
+    try{
+      var response = await net.localGet(fileName);
+
+      data = DataMenu.fromJson(response);
 
 
     }catch(e){

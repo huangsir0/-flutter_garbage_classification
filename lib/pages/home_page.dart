@@ -86,6 +86,7 @@ class _HomePageState extends State<HomePage>
           onTap: () {
             if (_searchEditingController.text.isEmpty) {
               showToast("请输入关键字查询");
+              return;
             }
             _searchKeyWords = _searchEditingController.text;
 

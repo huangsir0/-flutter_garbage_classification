@@ -28,7 +28,7 @@ class BaseDialog extends Dialog {
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
-                          Radius.circular(8.0),
+                          Radius.circular(10.0),
                         ))),
                 margin: margin==null? const EdgeInsets.all(10.0):margin,
                 child:  this.widget

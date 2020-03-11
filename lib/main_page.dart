@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_garbage_classification/main/home_page.dart';
-import 'package:flutter_garbage_classification/main/mine_page.dart';
-import 'package:flutter_garbage_classification/main/test_page.dart';
-import 'package:flutter_garbage_classification/main/thematic_page.dart';
+import 'package:flutter_garbage_classification/pages/home_page.dart';
+import 'package:flutter_garbage_classification/pages/mine_page.dart';
+import 'package:flutter_garbage_classification/pages/test_page.dart';
+import 'package:flutter_garbage_classification/pages/thematic_page.dart';
 
 import 'common/constans.dart';
 

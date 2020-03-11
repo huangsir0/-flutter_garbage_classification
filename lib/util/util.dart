@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:fluttertoast/fluttertoast.dart';
@@ -27,8 +28,6 @@ class Rex {
   //匹配正则,以"thumbURL"开头，.jpg结束的字符
   static final String imgRex = '"thumbURL".*?.jpg';
 
-
-
   //从庞大的网页数据中获取自己所需数据
   static List<String> matchImgUrl(String source) {
     RegExp regExp = new RegExp(imgRex);
@@ -49,3 +48,21 @@ class Rex {
   }
 }
 
+class Util {
+
+  static Random _random = new Random();
+
+  static String getString(int digitCount) {
+    String s = "";
+    for (var i = 0; i < digitCount; i++) {
+      s += _random.nextInt(10).toString();
+    }
+    return s;
+  }
+}
+
+//为空判断
+bool isNullOrEmpty(String msg) {
+  if (msg == null) return true;
+  return msg.length == 0;
+}

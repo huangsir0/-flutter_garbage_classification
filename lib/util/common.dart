@@ -40,6 +40,15 @@ class StringImgRes {
   static const dialog_top = "assets/images/splash.png";
 
 
+  static const head = "assets/images/head.jpeg";
+  static const lianxi = "assets/images/lianxi.png";
+  static const qiehuan = "assets/images/qiehuan.png";
+  static const shoucang = "assets/images/shoucang.png";
+  static const zhanghao = "assets/images/zhanghao.png";
+
+  static const initHead = "assets/images/inithead.png";
+
+
   static const base= "assets/images/";
 
 
