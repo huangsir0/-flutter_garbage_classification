@@ -105,6 +105,9 @@ class _ThematicPageState extends State<ThematicPage>
     _homePageBloc.fetchGarabe(text, (GarbageInfo info) {
       //获取到消息的回调，显示Dialog
       setState(() {
+        if (info == null || info.type == "请输入垃圾" || isNullOrEmpty(info.name)) {
+          info.type = "鸟在飞,你在吹，环保小卫听呀么听不懂。";
+        }
         _messages.add(ChatMessage("root", OTHER, info.type));
       });
     });
