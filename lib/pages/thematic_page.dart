@@ -24,6 +24,8 @@ class _ThematicPageState extends State<ThematicPage>
     super.build(context);
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading:false,
+        centerTitle: true,
         title: Text(
           "这是什么垃圾",
           style: TextStyle(color: Colors.white),

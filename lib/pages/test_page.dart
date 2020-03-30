@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_garbage_classification/bean/data_menu.dart';
 import 'package:flutter_garbage_classification/blocs/test_page_bloc.dart';
 import 'package:flutter_garbage_classification/util/common.dart';
 import 'package:flutter_garbage_classification/util/util.dart';
 import 'package:flutter_garbage_classification/widgets/widgets.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class TestPage extends StatefulWidget {
   @override
@@ -26,6 +29,8 @@ class _TestPageState extends State<TestPage>
     super.build(context);
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
         title: Text(
           "分类指南",
           style: TextStyle(color: Colors.white),
@@ -78,9 +83,17 @@ class _TestPageState extends State<TestPage>
         ),
       ),
       floatingActionButton: FloatingActionButton(
-
-        onPressed: () {
-          showToast("下载");
+        onPressed: () async {
+          if (await Permission.storage.request().isGranted) {
+            //保存图片
+            ByteData bytes = await rootBundle.load('assets/images/need.jpeg');
+            final result = await ImageGallerySaver.saveImage(
+                bytes.buffer.asUint8List()); //这个是核心的保存图片的插件
+            print(result); //这个返回值 在保存成功后会返回true
+            showToast("保存成功");
+          } else {
+            showToast("未授权");
+          }
         },
         child: Icon(Icons.file_download),
       ),

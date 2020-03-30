@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_garbage_classification/pages/splash_page.dart';
 import 'package:flutter_garbage_classification/util/common.dart';
 
 import 'main_page.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: MainColor,
       ),
-      home:MainPage(),
+      home:SplashPage(),
     );
   }
 }
